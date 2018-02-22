@@ -1,6 +1,7 @@
 package com.tatar.lifecycling;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -48,5 +49,24 @@ public class LifecyclingActivity extends AppCompatActivity {
     protected void onDestroy() {
         Log.i(TAG, childActivityName + " onDestroy called");
         super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.i(TAG, childActivityName + " onRestart called");
+        super.onRestart();
+    }
+
+    // These two are not Activity lifecycle methods
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        Log.i(TAG, childActivityName + " onSaveInstanceState called");
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.i(TAG, childActivityName + " onRestoreInstanceState called");
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }
