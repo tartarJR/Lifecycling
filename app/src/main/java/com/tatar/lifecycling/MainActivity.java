@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends LifecyclingActivity {
 
     private static final String CLASS_NAME = MainActivity.class.getSimpleName();
+    private static final String DUMMY_CONTENT = "DUMMY_CONTENT";
 
+    private EditText dummyEditText;
     private Button dopeActivityButton;
     private Button transparentActivityButton;
 
@@ -22,6 +25,7 @@ public class MainActivity extends LifecyclingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dummyEditText = findViewById(R.id.dummyEditText);
         dopeActivityButton = findViewById(R.id.dope_activity_button);
         transparentActivityButton = findViewById(R.id.transparent_activity_button);
 
