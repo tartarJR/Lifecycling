@@ -7,10 +7,16 @@ import android.util.Log;
 public class LifecyclingActivity extends AppCompatActivity {
 
     private static final String TAG = "Lifecycling App";
+    private static final String CLASS_NAME = LifecyclingActivity.class.getSimpleName();
 
     private String childActivityName;
 
+    public LifecyclingActivity() {
+        Log.i(CLASS_NAME, "PARENT ACTIVITY CREATED");
+    }
+
     protected void setChildActivityName(String childActivityName) {
+        Log.i(TAG, "NAME HAS BEEN SET AS: " + childActivityName);
         this.childActivityName = childActivityName;
     }
 
@@ -118,6 +124,11 @@ public class LifecyclingActivity extends AppCompatActivity {
     this method is called after onStart() when the activity is being re-initialized from a previously saved state, given here in savedInstanceState.
     the default implementation of this method performs a restore of any view state that had previously been frozen by onSaveInstanceState(Bundle).
     this method is called between onStart() and onPostCreate(Bundle).
+    Please notice that onRestoreInstanceState() is called when activity is recreated but only if it was killed by the OS
+        - orientation of the device changes (your activity is destroyed and recreated)
+        - there is another activity in front of yours and at some point the OS kills your activity in order to free memory
+        - if you are in your activity and you hit Back button on the device, your activity is finish()ed and next time you start your app it is started again(re-created)
+          but this time without saved state because you intentionally exited it when you hit Back button
     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
