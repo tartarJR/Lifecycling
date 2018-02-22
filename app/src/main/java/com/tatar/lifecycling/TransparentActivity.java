@@ -4,8 +4,10 @@ import android.os.Bundle;
 
 public class TransparentActivity extends LifecyclingActivity {
 
+    private static final String CLASS_NAME = TransparentActivity.class.getSimpleName();
+
     public TransparentActivity() {
-        setChildActivityName("TransparentActivity");
+        setChildActivityName(CLASS_NAME);
     }
 
     @Override

@@ -8,11 +8,13 @@ import android.widget.Button;
 
 public class MainActivity extends LifecyclingActivity {
 
+    private static final String CLASS_NAME = MainActivity.class.getSimpleName();
+
     private Button dopeActivityButton;
     private Button transparentActivityButton;
 
     public MainActivity() {
-        setChildActivityName("MainActivity");
+        setChildActivityName(CLASS_NAME);
     }
 
     @Override

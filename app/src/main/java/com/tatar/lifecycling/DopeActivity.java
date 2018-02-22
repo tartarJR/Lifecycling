@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 
 public class DopeActivity extends LifecyclingActivity {
 
+    private static final String CLASS_NAME = DopeActivity.class.getSimpleName();
+
     public DopeActivity() {
-        setChildActivityName("DopeActivity");
+        setChildActivityName(CLASS_NAME);
     }
 
     @Override
