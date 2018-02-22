@@ -17,8 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".LifecyclingActivity" />
-        <activity android:name=".DopeActivity" />
-        <activity android:name=".TransparentActivity"></activity>
+        <activity
+            android:name=".DopeActivity"
+            android:label="Dope Activity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TransparentActivity"
+            android:label="Transparent Activity"
+            android:theme="@style/Theme.AppCompat.Translucent" />
     </application>
 
 </manifest>
