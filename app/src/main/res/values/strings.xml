@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Lifecycling</string>
     <string name="lbl_lifecyclingactivity">LifecyclingActivity of the Lifecycling App</string>
-    <string name="activity_a_btn_txt">ACTIVITY A</string>
-    <string name="activity_b_btn_txt">TRANSPARENT ACTIVITY B</string>
+    <string name="dope_activity_btn_txt">DOPE ACTIVITY</string>
+    <string name="transparent_activity_btn_txt">TRANSPARENT ACTIVITY</string>
 </resources>

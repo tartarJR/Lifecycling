@@ -22,29 +22,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/a_button"
+        android:id="@+id/dope_activity_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="@string/activity_a_btn_txt"
+        android:text="@string/dope_activity_btn_txt"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/b_button"
+        app:layout_constraintEnd_toStartOf="@+id/transparent_activity_button"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/b_button"
+        android:id="@+id/transparent_activity_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/activity_b_btn_txt"
+        android:text="@string/transparent_activity_btn_txt"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/a_button" />
+        app:layout_constraintStart_toEndOf="@+id/dope_activity_button" />
 
 </android.support.constraint.ConstraintLayout>

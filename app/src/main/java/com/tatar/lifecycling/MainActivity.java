@@ -6,8 +6,8 @@ import android.widget.Button;
 
 public class MainActivity extends LifecyclingActivity {
 
-    private Button activityAButton;
-    private Button activityBButton;
+    private Button dopeActivityButton;
+    private Button transparentActivityButton;
 
     public MainActivity() {
         setChildActivityName("MainActivity");
@@ -18,17 +18,17 @@ public class MainActivity extends LifecyclingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        activityAButton = findViewById(R.id.a_button);
-        activityBButton = findViewById(R.id.b_button);
+        dopeActivityButton = findViewById(R.id.dope_activity_button);
+        transparentActivityButton = findViewById(R.id.transparent_activity_button);
 
-        activityAButton.setOnClickListener(new View.OnClickListener() {
+        dopeActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        activityBButton.setOnClickListener(new View.OnClickListener() {
+        transparentActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
