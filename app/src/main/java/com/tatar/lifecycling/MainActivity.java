@@ -1,5 +1,7 @@
 package com.tatar.lifecycling;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,15 +26,20 @@ public class MainActivity extends LifecyclingActivity {
         dopeActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(MainActivity.this, DopeActivity.class);
             }
         });
 
         transparentActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(MainActivity.this, TransparentActivity.class);
             }
         });
+    }
+
+    private void startActivity(Context context, Class activity) {
+        Intent intent = new Intent(context, activity);
+        startActivity(intent);
     }
 }
