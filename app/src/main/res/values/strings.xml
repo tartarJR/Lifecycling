@@ -3,4 +3,5 @@
     <string name="lbl_lifecyclingactivity">LifecyclingActivity of the Lifecycling App</string>
     <string name="dope_activity_btn_txt">DOPE ACTIVITY</string>
     <string name="transparent_activity_btn_txt">TRANSPARENT ACTIVITY</string>
+    <string name="lbl_dopeactivity">DopeActivity of the Lifecycling App</string>
 </resources>
