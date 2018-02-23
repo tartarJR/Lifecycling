@@ -1,5 +1,7 @@
 package com.tatar.lifecycling;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,7 +18,7 @@ public class LifecyclingActivity extends AppCompatActivity {
     }
 
     protected void setChildActivityName(String childActivityName) {
-        Log.i(TAG, "NAME HAS BEEN SET AS: " + childActivityName);
+        Log.i(childActivityName, "NAME HAS BEEN SET");
         this.childActivityName = childActivityName;
     }
 
@@ -108,6 +110,7 @@ public class LifecyclingActivity extends AppCompatActivity {
     // These two below are not Activity lifecycle methods
 
     /*
+    as the activity begins to stop, the system calls the onSaveInstanceState() method so your activity can save state information with a collection of key-value pairs
     called to retrieve per-instance state from an activity before being killed so that the state can be restored in onCreate(Bundle) or onRestoreInstanceState(Bundle)
     (the Bundle populated by this method will be passed to both)
     The default implementation takes care of most of the UI per-instance state for you by calling onSaveInstanceState() on each view in the hierarchy that has an id
@@ -124,7 +127,7 @@ public class LifecyclingActivity extends AppCompatActivity {
     this method is called after onStart() when the activity is being re-initialized from a previously saved state, given here in savedInstanceState.
     the default implementation of this method performs a restore of any view state that had previously been frozen by onSaveInstanceState(Bundle).
     this method is called between onStart() and onPostCreate(Bundle).
-    Please notice that onRestoreInstanceState() is called when activity is recreated but only if it was killed by the OS
+    please notice that onRestoreInstanceState() is called when activity is recreated but only if it was killed by the OS
         - orientation of the device changes (your activity is destroyed and recreated)
         - there is another activity in front of yours and at some point the OS kills your activity in order to free memory
         - if you are in your activity and you hit Back button on the device, your activity is finish()ed and next time you start your app it is started again(re-created)
@@ -134,5 +137,11 @@ public class LifecyclingActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.i(TAG, childActivityName + " onRestoreInstanceState called");
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    protected void startActivity(Context context, Class activity) {
+        Intent intent = new Intent(context, activity);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT); // if set in an Intent passed to Context.startActivity(), this flag will cause the launched activity to be brought to the front of its task's history stack if it is already running.
+        startActivity(intent);
     }
 }
