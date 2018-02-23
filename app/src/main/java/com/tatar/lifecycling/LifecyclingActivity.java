@@ -70,8 +70,8 @@ public class LifecyclingActivity extends AppCompatActivity {
     /*
     called when the activity is no longer visible to the user which means another activity has been resumed  and covering this one
     (New activity is being started, an existing one is being brought to foreground, or activity is being destroyed)
-    Followed by either onRestart or if the activity is coming back or onDestroy if the activity is going away
-    As an example, a BroadcastReceiver can be unregistered here
+    followed by either onRestart or if the activity is coming back or onDestroy if the activity is going away
+    as an example, a BroadcastReceiver can be unregistered here
     KILLABLE (Pre-HONEYCOMB)
      */
     @Override
@@ -82,10 +82,10 @@ public class LifecyclingActivity extends AppCompatActivity {
 
     /*
     final call before the activity is destroyed
-    can be called because someone called finish() method or activity is destroying the activity due to lack of resources
-    The scenario can be distinguished by isFinishing() method
+    can be called because someone called finish() method or system is destroying the activity due to lack of resources
+    the scenario can be distinguished by isFinishing() method
     hitting back button also calls onDestroy
-    As an example, a running thread can be stopped here
+    as an example, a running thread can be stopped here
     KILLABLE
      */
     @Override
@@ -105,7 +105,7 @@ public class LifecyclingActivity extends AppCompatActivity {
         super.onRestart();
     }
 
-    // These two are not Activity lifecycle methods
+    // These two below are not Activity lifecycle methods
 
     /*
     called to retrieve per-instance state from an activity before being killed so that the state can be restored in onCreate(Bundle) or onRestoreInstanceState(Bundle)
